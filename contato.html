@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-root="./">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Protesto24h</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="label">Fale conosco</div>
+  <h1>Estamos aqui<br><span class="grad">para ajudar.</span></h1>
+  <p>Nossa equipe está pronta para responder suas dúvidas, apresentar a plataforma ou ajudar com qualquer necessidade.</p>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start;">
+
+      <!-- CANAIS -->
+      <div class="reveal">
+        <h3 style="margin-bottom:28px;">Nossos canais</h3>
+        <div style="display:flex;flex-direction:column;gap:20px;margin-bottom:40px;">
+          <div class="card" style="display:flex;align-items:center;gap:20px;padding:24px;">
+            <div style="width:48px;height:48px;background:rgba(34,197,94,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">💬</div>
+            <div>
+              <div style="font-size:15px;font-weight:700;margin-bottom:4px;">WhatsApp</div>
+              <div style="font-size:13px;color:var(--muted);">Resposta em minutos durante horário comercial</div>
+              <a href="https://wa.me/5500000000000" style="font-size:13px;color:var(--accent2);margin-top:4px;display:inline-block;">Abrir conversa →</a>
+            </div>
+          </div>
+          <div class="card" style="display:flex;align-items:center;gap:20px;padding:24px;">
+            <div style="width:48px;height:48px;background:rgba(99,102,241,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">✉️</div>
+            <div>
+              <div style="font-size:15px;font-weight:700;margin-bottom:4px;">E-mail</div>
+              <div style="font-size:13px;color:var(--muted);">Respondemos em até 4 horas úteis</div>
+              <a href="mailto:contato@protesto24h.com.br" style="font-size:13px;color:var(--accent2);margin-top:4px;display:inline-block;">contato@protesto24h.com.br</a>
+            </div>
+          </div>
+          <div class="card" style="display:flex;align-items:center;gap:20px;padding:24px;">
+            <div style="width:48px;height:48px;background:rgba(6,182,212,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">📞</div>
+            <div>
+              <div style="font-size:15px;font-weight:700;margin-bottom:4px;">Telefone</div>
+              <div style="font-size:13px;color:var(--muted);">Segunda a sexta, 8h às 18h</div>
+              <a href="tel:+5500000000000" style="font-size:13px;color:var(--accent2);margin-top:4px;display:inline-block;">(00) 0000-0000</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h4 style="margin-bottom:8px;">Horário de atendimento</h4>
+          <p style="font-size:13px;">Segunda a sexta: 8h às 18h<br>Sábados: 9h às 13h<br>Suporte emergencial disponível 24/7 pelo portal</p>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO -->
+      <div class="card reveal" style="padding:40px;">
+        <h3 style="margin-bottom:28px;">Envie uma mensagem</h3>
+        <form onsubmit="handleForm(event)">
+          <div class="grid-2" style="gap:16px;">
+            <div class="form-group">
+              <label>Nome</label>
+              <input type="text" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+              <label>Empresa</label>
+              <input type="text" placeholder="Nome da empresa">
+            </div>
+          </div>
+          <div class="grid-2" style="gap:16px;">
+            <div class="form-group">
+              <label>E-mail</label>
+              <input type="email" placeholder="seu@email.com.br" required>
+            </div>
+            <div class="form-group">
+              <label>Telefone</label>
+              <input type="tel" placeholder="(00) 00000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Assunto</label>
+            <select>
+              <option value="">Selecione o assunto</option>
+              <option>Dúvida sobre cobrança</option>
+              <option>Dúvida sobre protesto</option>
+              <option>Integração / API</option>
+              <option>Planos e preços</option>
+              <option>Suporte técnico</option>
+              <option>Parceria comercial</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea placeholder="Descreva sua dúvida ou necessidade em detalhes..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px;">Enviar mensagem →</button>
+          <p style="font-size:12px;text-align:center;margin-top:16px;">Respondemos em até 4 horas úteis. Seus dados estão protegidos pela nossa <a href="#" style="color:var(--accent2);">Política de Privacidade</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA EMPRESAS -->
+<section style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="label">Para empresas</div>
+      <h2>Precisa de uma solução<br>sob medida?</h2>
+      <p>Para volumes altos ou necessidades específicas, nossa equipe comercial apresenta uma proposta personalizada.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="card" style="text-align:center;padding:36px;">
+        <span style="font-size:40px;display:block;margin-bottom:16px;">🏢</span>
+        <h3>Empresas com alto volume</h3>
+        <p style="margin:12px 0;">Mais de 2.000 títulos/mês? Temos condições especiais e suporte dedicado.</p>
+        <a href="mailto:comercial@protesto24h.com.br" class="btn btn-ghost btn-sm" style="margin-top:16px;">Falar com comercial</a>
+      </div>
+      <div class="card" style="text-align:center;padding:36px;">
+        <span style="font-size:40px;display:block;margin-bottom:16px;">⚡</span>
+        <h3>Integração via API</h3>
+        <p style="margin:12px 0;">Quer integrar ao seu sistema? Nossa equipe técnica faz o onboarding completo.</p>
+        <a href="servicos/api-integracoes.html" class="btn btn-ghost btn-sm" style="margin-top:16px;">Ver documentação API</a>
+      </div>
+      <div class="card" style="text-align:center;padding:36px;">
+        <span style="font-size:40px;display:block;margin-bottom:16px;">🤝</span>
+        <h3>Parcerias</h3>
+        <p style="margin:12px 0;">Escritórios de advocacia, fintechs e ERPs: conheça nosso programa de parceiros.</p>
+        <a href="mailto:parcerias@protesto24h.com.br" class="btn btn-ghost btn-sm" style="margin-top:16px;">Ser parceiro</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/app.js"></script>
+<script>
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = '✓ Mensagem enviada!';
+  btn.style.background = '#16a34a';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>

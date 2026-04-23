@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-root="../">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API e Integrações — Protesto24h</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<nav class="breadcrumb"><a href="../index.html">Home</a> › <a href="index.html">Serviços</a> › <span>API e Integrações</span></nav>
+
+<section class="page-hero">
+  <div class="label">Para desenvolvedores</div>
+  <h1>Automatize sua<br><span class="grad">cobrança via API.</span></h1>
+  <p>Integre protesto e cobrança diretamente no seu ERP, sistema financeiro ou aplicação. API RESTful com documentação completa e suporte dedicado.</p>
+  <div class="cta-actions" style="justify-content:center;">
+    <a href="https://api.protesto24h.com.br/docs" class="btn btn-primary btn-lg">Ver documentação →</a>
+    <a href="../contato.html" class="btn btn-ghost btn-lg">Falar com equipe técnica</a>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="grid-4 reveal">
+    <div><div class="stat-num">REST</div><div class="stat-desc">Arquitetura da API</div></div>
+    <div><div class="stat-num" data-count="99" data-suffix=".9%">0</div><div class="stat-desc">Uptime garantido</div></div>
+    <div><div class="stat-num">&lt;200ms</div><div class="stat-desc">Latência média</div></div>
+    <div><div class="stat-num">24/7</div><div class="stat-desc">Suporte técnico</div></div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">O que você pode fazer</div>
+      <h2>Endpoints disponíveis</h2>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="card-icon">📤</span><h3>Enviar título para protesto</h3><p>Envie dados do título e do devedor programaticamente. Receba o ID do protocolo para acompanhamento.</p></div>
+      <div class="card"><span class="card-icon">📞</span><h3>Iniciar cobrança</h3><p>Dispare o fluxo de cobrança extrajudicial via API com um único POST. Defina canais e prazo de escalonamento.</p></div>
+      <div class="card"><span class="card-icon">📊</span><h3>Consultar status</h3><p>Acompanhe em tempo real o status de cada título, etapa da cobrança e resposta do cartório.</p></div>
+      <div class="card"><span class="card-icon">🔔</span><h3>Webhooks</h3><p>Receba notificações em tempo real no seu sistema quando houver qualquer atualização no título.</p></div>
+      <div class="card"><span class="card-icon">🔍</span><h3>Consulta de protestos</h3><p>Consulte protestos de CPF ou CNPJ programaticamente e integre ao seu fluxo de análise de crédito.</p></div>
+      <div class="card"><span class="card-icon">📄</span><h3>Emitir carta de anuência</h3><p>Após o pagamento, emita a carta de anuência automaticamente via API sem intervenção manual.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPLO DE CÓDIGO -->
+<section style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Exemplo de uso</div>
+      <h2>Integração em minutos</h2>
+      <p>API simples, bem documentada e fácil de integrar em qualquer stack.</p>
+    </div>
+    <div class="grid-2 reveal" style="gap:32px;align-items:start;">
+      <div>
+        <h4 style="margin-bottom:16px;color:var(--accent2);">POST /v1/titulos</h4>
+        <div class="code-block">
+<span class="c">// Enviar título para protesto</span>
+<span class="k">curl</span> -X POST \
+  https://api.protesto24h.com.br/<span class="s">v1/titulos</span> \
+  -H <span class="s">"Authorization: Bearer {seu_token}"</span> \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d <span class="s">'{
+    "devedor": {
+      "nome": "João Silva",
+      "cpf": "123.456.789-00",
+      "email": "joao@email.com"
+    },
+    "valor": 1500.00,
+    "vencimento": "2025-01-15",
+    "servico": "cobranca_protesto"
+  }'</span>
+        </div>
+        <h4 style="margin-bottom:16px;margin-top:24px;color:var(--accent2);">Resposta</h4>
+        <div class="code-block">
+{
+  <span class="n">"id"</span>: <span class="s">"tit_abc123"</span>,
+  <span class="n">"status"</span>: <span class="s">"cobranca_iniciada"</span>,
+  <span class="n">"protocolo"</span>: <span class="s">"P24H-2025-001234"</span>,
+  <span class="n">"webhook_url"</span>: <span class="s">"https://..."</span>
+}
+        </div>
+      </div>
+      <div>
+        <h4 style="margin-bottom:20px;">Por que usar a API Protesto24h</h4>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="feature-pill"><span class="feature-pill-icon">📚</span><div><div class="feature-pill-text">Documentação completa com exemplos reais</div></div></div>
+          <div class="feature-pill"><span class="feature-pill-icon">🔑</span><div><div class="feature-pill-text">Autenticação via Bearer Token simples</div></div></div>
+          <div class="feature-pill"><span class="feature-pill-icon">🌐</span><div><div class="feature-pill-text">SDKs para Node.js, Python e PHP</div></div></div>
+          <div class="feature-pill"><span class="feature-pill-icon">🧪</span><div><div class="feature-pill-text">Ambiente de sandbox para testes</div></div></div>
+          <div class="feature-pill"><span class="feature-pill-icon">⚠️</span><div><div class="feature-pill-text">Webhooks com retry automático</div></div></div>
+          <div class="feature-pill"><span class="feature-pill-icon">🤝</span><div><div class="feature-pill-text">Suporte técnico especializado</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRAÇÕES -->
+<section>
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="label">Compatibilidade</div>
+      <h2>Integra com qualquer sistema</h2>
+    </div>
+    <div class="grid-4 reveal">
+      <div class="card" style="text-align:center;padding:24px;"><span style="font-size:32px;">🏭</span><h4 style="margin-top:12px;">ERPs</h4><p style="font-size:13px;">SAP, TOTVS, Sankhya e qualquer outro via REST</p></div>
+      <div class="card" style="text-align:center;padding:24px;"><span style="font-size:32px;">💼</span><h4 style="margin-top:12px;">CRMs</h4><p style="font-size:13px;">Salesforce, HubSpot, RD Station e similares</p></div>
+      <div class="card" style="text-align:center;padding:24px;"><span style="font-size:32px;">🏦</span><h4 style="margin-top:12px;">Bancos</h4><p style="font-size:13px;">Integração com sistemas de cobrança bancária</p></div>
+      <div class="card" style="text-align:center;padding:24px;"><span style="font-size:32px;">🛒</span><h4 style="margin-top:12px;">E-commerce</h4><p style="font-size:13px;">Shopify, VTEX, WooCommerce e marketplaces</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-box reveal">
+    <h2>Pronto para integrar?</h2>
+    <p>Acesse a documentação ou fale com nossa equipe técnica para um onboarding personalizado.</p>
+    <div class="cta-actions">
+      <a href="https://api.protesto24h.com.br/docs" class="btn btn-primary btn-lg">Ver documentação →</a>
+      <a href="../contato.html" class="btn btn-ghost btn-lg">Falar com dev team</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

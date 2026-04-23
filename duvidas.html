@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-root="./">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dúvidas Frequentes — Protesto24h</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="label">Central de Ajuda</div>
+  <h1>Como podemos<br><span class="grad">te ajudar?</span></h1>
+  <p>Encontre respostas rápidas sobre cobrança, protesto, cancelamento, preços e muito mais.</p>
+  <div style="max-width:560px;margin:32px auto 0;position:relative;">
+    <input type="text" id="faq-search" placeholder="Buscar pergunta..." oninput="filterFaq(this.value)"
+      style="width:100%;background:rgba(255,255,255,.08);border:1px solid var(--border);border-radius:50px;padding:14px 48px 14px 20px;color:var(--text);font-family:inherit;font-size:15px;outline:none;box-sizing:border-box;">
+    <span style="position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;">🔍</span>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="faq-cats reveal">
+      <button class="faq-cat active" data-cat="all">Todos</button>
+      <button class="faq-cat" data-cat="cobranca">Cobrança</button>
+      <button class="faq-cat" data-cat="protesto">Protesto</button>
+      <button class="faq-cat" data-cat="cancelamento">Cancelamento</button>
+      <button class="faq-cat" data-cat="consulta">Consulta Protesto</button>
+      <button class="faq-cat" data-cat="preco">Preços</button>
+      <button class="faq-cat" data-cat="api">Integração / API</button>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <!-- COBRANÇA -->
+      <div class="faq-item" data-cat="cobranca">
+        <button class="faq-q">O que é cobrança extrajudicial? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">É o processo de recuperação de crédito que acontece fora do ambiente judicial. É mais rápido, mais barato e, na maioria dos casos, mais eficaz que uma ação judicial. Utilizamos e-mail, SMS, WhatsApp e ligações profissionais.</div></div>
+      </div>
+      <div class="faq-item" data-cat="cobranca">
+        <button class="faq-q">Quais canais são usados na cobrança? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Nossa régua de cobrança utiliza e-mails personalizados (até 5 envios), mensagens via WhatsApp, SMS e ligações telefônicas feitas por profissionais especializados em negociação.</div></div>
+      </div>
+      <div class="faq-item" data-cat="cobranca">
+        <button class="faq-q">Quanto tempo dura o processo de cobrança? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">O processo de cobrança tem duração configurável. Em geral, o fluxo completo leva entre 15 e 30 dias. Se não houver pagamento, você pode optar por escalar para o protesto em cartório.</div></div>
+      </div>
+      <div class="faq-item" data-cat="cobranca">
+        <button class="faq-q">A cobrança respeita o Código de Defesa do Consumidor? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Todo o processo de cobrança da Protesto24h é feito em conformidade com o CDC e a legislação de proteção ao devedor. Utilizamos comunicações respeitosas e não invasivas.</div></div>
+      </div>
+
+      <!-- PROTESTO -->
+      <div class="faq-item" data-cat="protesto">
+        <button class="faq-q">O que é protesto de título? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Protesto de título é um ato público e formal, regulamentado pela Lei nº 9.492/97, pelo qual o credor registra em cartório a inadimplência do devedor. Gera restrição de crédito e pressão jurídica para o pagamento.</div></div>
+      </div>
+      <div class="faq-item" data-cat="protesto">
+        <button class="faq-q">Quais títulos posso protestar? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Aceitamos: notas fiscais (NF-e e NFS-e), duplicatas mercantis, notas promissórias, cheques devolvidos, contratos com valor definido e taxas de condomínio em atraso.</div></div>
+      </div>
+      <div class="faq-item" data-cat="protesto">
+        <button class="faq-q">Quanto tempo demora para o título chegar ao cartório? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Após o envio na plataforma, o título é encaminhado eletronicamente ao cartório em até 24 horas úteis.</div></div>
+      </div>
+      <div class="faq-item" data-cat="protesto">
+        <button class="faq-q">O devedor é notificado antes do protesto ser lavrado? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Por lei, o cartório deve notificar o devedor antes de lavrar o protesto. O devedor tem prazo para pagar e evitar o registro definitivo.</div></div>
+      </div>
+      <div class="faq-item" data-cat="protesto">
+        <button class="faq-q">Posso protestar dívidas de qualquer estado? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Nossa plataforma opera em todo o território nacional, enviando os títulos ao cartório competente de acordo com o domicílio do devedor.</div></div>
+      </div>
+
+      <!-- CANCELAMENTO -->
+      <div class="faq-item" data-cat="cancelamento">
+        <button class="faq-q">Como cancelo um protesto após o pagamento? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Após o pagamento, emitimos automaticamente a carta de anuência. Com ela, o devedor pode comparecer ao cartório responsável para solicitar o cancelamento do protesto.</div></div>
+      </div>
+      <div class="faq-item" data-cat="cancelamento">
+        <button class="faq-q">Quem pode cancelar o protesto? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Somente o credor (quem realizou o protesto) pode autorizar o cancelamento, através da emissão da carta de anuência. O devedor precisa apresentar essa carta no cartório.</div></div>
+      </div>
+      <div class="faq-item" data-cat="cancelamento">
+        <button class="faq-q">Qual o prazo para o cancelamento aparecer nos sistemas de crédito? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Após o cancelamento no cartório, a atualização nos órgãos de proteção ao crédito (SPC, Serasa, etc.) pode levar de 5 a 15 dias úteis.</div></div>
+      </div>
+
+      <!-- CONSULTA -->
+      <div class="faq-item" data-cat="consulta">
+        <button class="faq-q">A consulta de protesto abrange todo o Brasil? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Nossa consulta abrange cartórios de protesto em todo o território nacional, cobrindo todas as comarcas e estados.</div></div>
+      </div>
+      <div class="faq-item" data-cat="consulta">
+        <button class="faq-q">Posso consultar tanto CPF quanto CNPJ? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. A consulta funciona para pessoa física (CPF) e pessoa jurídica (CNPJ).</div></div>
+      </div>
+      <div class="faq-item" data-cat="consulta">
+        <button class="faq-q">O resultado é imediato? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Após o pagamento da consulta (R$ 9,00), o resultado é exibido em segundos com informações detalhadas sobre os protestos encontrados.</div></div>
+      </div>
+
+      <!-- PREÇO -->
+      <div class="faq-item" data-cat="preco">
+        <button class="faq-q">Existe mensalidade ou taxa de cadastro? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Não. Não cobramos mensalidade, taxa de cadastro, taxa de manutenção ou qualquer custo fixo. Você paga apenas por cada título que processar.</div></div>
+      </div>
+      <div class="faq-item" data-cat="preco">
+        <button class="faq-q">O preço é o mesmo para cobrança e protesto? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. O valor por título é o mesmo independente do serviço: Somente Cobrança, Somente Protesto ou Cobrança + Protesto. Você não paga a mais pelo serviço combinado.</div></div>
+      </div>
+      <div class="faq-item" data-cat="preco">
+        <button class="faq-q">Quando é cobrada a taxa de recuperação? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">A taxa de recuperação é descontada somente quando você efetivamente recebe o pagamento do devedor. Se não recuperar nada, não paga essa taxa.</div></div>
+      </div>
+
+      <!-- API -->
+      <div class="faq-item" data-cat="api">
+        <button class="faq-q">A API tem ambiente de sandbox para testes? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Disponibilizamos um ambiente de sandbox completo para testes de integração, sem custo adicional e sem impacto em títulos reais.</div></div>
+      </div>
+      <div class="faq-item" data-cat="api">
+        <button class="faq-q">Quais linguagens têm SDK disponível? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Atualmente disponibilizamos SDKs para Node.js, Python e PHP. Para outras linguagens, a API RESTful pode ser consumida diretamente com qualquer HTTP client.</div></div>
+      </div>
+      <div class="faq-item" data-cat="api">
+        <button class="faq-q">Como funciona a autenticação da API? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">A autenticação é feita via Bearer Token no header de cada requisição. O token é gerado no painel da plataforma e pode ser revogado a qualquer momento.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AINDA COM DÚVIDAS -->
+<section style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="label">Ainda com dúvidas?</div>
+      <h2>Fale com nossa equipe</h2>
+      <p>Nossa equipe está disponível para responder qualquer pergunta.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="card" style="text-align:center;padding:36px;">
+        <span style="font-size:40px;display:block;margin-bottom:16px;">💬</span>
+        <h3>WhatsApp</h3>
+        <p style="margin:12px 0 20px;">Resposta em minutos durante o horário comercial.</p>
+        <a href="https://wa.me/5500000000000" class="btn btn-green btn-sm">Abrir WhatsApp</a>
+      </div>
+      <div class="card" style="text-align:center;padding:36px;">
+        <span style="font-size:40px;display:block;margin-bottom:16px;">✉️</span>
+        <h3>E-mail</h3>
+        <p style="margin:12px 0 20px;">Envie sua dúvida detalhada e respondemos em até 4 horas.</p>
+        <a href="mailto:suporte@protesto24h.com.br" class="btn btn-ghost btn-sm">Enviar e-mail</a>
+      </div>
+      <div class="card" style="text-align:center;padding:36px;">
+        <span style="font-size:40px;display:block;margin-bottom:16px;">📞</span>
+        <h3>Telefone</h3>
+        <p style="margin:12px 0 20px;">Atendimento de segunda a sexta, das 8h às 18h.</p>
+        <a href="tel:+5500000000000" class="btn btn-ghost btn-sm">Ligar agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/app.js"></script>
+<script>
+function filterFaq(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = (!q || text.includes(q)) ? '' : 'none';
+  });
+  if (!q) {
+    const active = document.querySelector('.faq-cat.active');
+    if (active) active.click();
+  }
+}
+</script>
+</body>
+</html>
