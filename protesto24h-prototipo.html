@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protesto24h — Recupere seu dinheiro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #6366f1;
+      --accent2: #06b6d4;
+      --gradient: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+      --glass: rgba(255,255,255,0.07);
+      --glass-border: rgba(255,255,255,0.12);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15,23,42,0.8);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+      transition: background .3s;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--gradient);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(99,102,241,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(6,182,212,0.1) 0%, transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent2);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 7px; height: 7px;
+      background: var(--accent2);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    h1 {
+      font-size: clamp(36px, 4vw, 58px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    h1 span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 24px rgba(99,102,241,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,0.4); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--glass-border);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+
+    /* Hero card */
+    .hero-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(20px);
+      position: relative;
+    }
+
+    .hero-card-title {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .stat-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .stat-icon.purple { background: rgba(99,102,241,0.2); }
+    .stat-icon.cyan { background: rgba(6,182,212,0.2); }
+    .stat-icon.green { background: rgba(34,197,94,0.2); }
+
+    .stat-label { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+    .stat-value { font-size: 22px; font-weight: 700; }
+    .stat-value.purple { color: #818cf8; }
+    .stat-value.cyan { color: #22d3ee; }
+    .stat-value.green { color: #4ade80; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      padding: 60px 5%;
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-desc { font-size: 14px; color: var(--muted); }
+
+    /* ── HOW IT WORKS ── */
+    section { padding: 100px 5%; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 60px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      z-index: 0;
+    }
+
+    .step-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+      z-index: 1;
+      transition: transform .3s, border-color .3s;
+    }
+    .step-card:hover { transform: translateY(-6px); border-color: var(--accent); }
+
+    .step-num {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .step-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── FEATURES ── */
+    .features-section { background: rgba(255,255,255,0.02); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all .3s;
+      cursor: default;
+    }
+    .feature-card:hover {
+      border-color: var(--accent);
+      background: rgba(99,102,241,0.08);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .feature-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform .3s;
+    }
+    .testimonial-card:hover { transform: translateY(-4px); }
+
+    .stars { color: #fbbf24; font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .author-name { font-size: 14px; font-weight: 600; }
+    .author-role { font-size: 12px; color: var(--muted); }
+
+    /* ── CTA ── */
+    .cta-section {
+      text-align: center;
+      padding: 120px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(99,102,241,0.12) 0%, transparent 70%);
+    }
+
+    .cta-section * { position: relative; }
+
+    .cta-box {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 80px 60px;
+      max-width: 700px;
+      margin: 0 auto;
+      backdrop-filter: blur(20px);
+    }
+
+    .cta-box h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 800; margin-bottom: 16px; }
+    .cta-box p { color: var(--muted); font-size: 16px; margin-bottom: 36px; line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 60px 5% 40px;
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-top: 16px; max-width: 280px; }
+
+    .footer-col h4 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-col a:hover { color: var(--text); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid var(--glass-border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── STICKY CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 99;
+      background: var(--gradient);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(99,102,241,0.4);
+      transition: transform .2s, opacity .3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .sticky-cta.show { opacity: 1; pointer-events: all; }
+    .sticky-cta:hover { transform: scale(1.05); }
+
+    /* ── ROI CALCULATOR ── */
+    .roi-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .roi-inputs {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .roi-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+
+    .roi-input-wrap {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      transition: border-color .2s;
+    }
+    .roi-input-wrap:focus-within { border-color: var(--accent); }
+
+    .roi-prefix {
+      padding: 0 14px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      border-right: 1px solid var(--glass-border);
+      height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    .roi-input-wrap input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 700;
+      padding: 0 16px;
+      height: 48px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .roi-range {
+      width: 100%;
+      -webkit-appearance: none;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.1);
+      outline: none;
+      cursor: pointer;
+    }
+    .roi-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--gradient);
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(99,102,241,0.5);
+    }
+
+    .roi-range-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .roi-results {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 36px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .roi-result-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .roi-result-main {
+      background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(6,182,212,0.15));
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .roi-big-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .roi-big-value {
+      font-size: 42px;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      transition: all .3s;
+    }
+
+    .roi-result-rows { display: flex; flex-direction: column; gap: 14px; }
+
+    .roi-result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+    .roi-result-row.highlight { font-weight: 700; font-size: 15px; }
+
+    .roi-row-label { color: var(--muted); }
+    .roi-row-value { font-weight: 600; }
+    .roi-row-value.negative { color: #f87171; }
+    .roi-row-value.green { color: #4ade80; }
+
+    .roi-divider {
+      height: 1px;
+      background: var(--glass-border);
+      margin: 4px 0;
+    }
+
+    @media (max-width: 900px) {
+      .roi-wrapper { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid::before { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Protesto24h</div>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#recursos">Recursos</a></li>
+      <li><a href="#calculadora">Calcular ROI</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <button class="nav-cta">Começar grátis</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Plataforma líder em protesto digital
+        </div>
+        <h1>Acabe com a<br><span>inadimplência</span><br>de vez.</h1>
+        <p class="hero-sub">Proteste títulos online em minutos. Sem burocracia, sem papel. Recupere seu dinheiro de forma rápida, segura e 100% digital.</p>
+        <div class="hero-actions">
+          <button class="btn-primary">Protestar agora →</button>
+          <button class="btn-ghost">Ver demonstração</button>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <p class="hero-card-title">Painel em tempo real</p>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-icon purple">📋</div>
+            <div>
+              <div class="stat-label">Títulos protestados hoje</div>
+              <div class="stat-value purple" data-count="1284">0</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon cyan">⚡</div>
+            <div>
+              <div class="stat-label">Tempo médio de protesto</div>
+              <div class="stat-value cyan">24h</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon green">💰</div>
+            <div>
+              <div class="stat-label">Recuperado este mês</div>
+              <div class="stat-value green" data-count="3840000" data-prefix="R$ " data-suffix=" mi">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar reveal">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number" data-count="50000" data-suffix="+">0</div>
+        <div class="stat-desc">Clientes ativos</div>
+      </div>
+      <div>
+        <div class="stat-number" data-count="98" data-suffix="%">0</div>
+        <div class="stat-desc">Taxa de satisfação</div>
+      </div>
+      <div>
+        <div class="stat-number" data-count="24" data-suffix="h">0</div>
+        <div class="stat-desc">Tempo médio de protesto</div>
+      </div>
+      <div>
+        <div class="stat-number" data-count="500" data-prefix="R$ " data-suffix="M+">0</div>
+        <div class="stat-desc">Recuperados em 2024</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section id="como-funciona">
+    <div class="section-label">Passo a passo</div>
+    <h2 class="section-title">Simples como deve ser</h2>
+    <p class="section-sub">Em apenas 4 etapas você já tem seu devedor protestado e a pressão de recuperação em andamento.</p>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Informe o devedor</div>
+        <div class="step-desc">Insira os dados do devedor e o valor da dívida. Nosso sistema valida tudo automaticamente.</div>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">2</div>
+        <div class="step-title">Envie o título</div>
+        <div class="step-desc">Upload do documento ou integração via API. Aceitamos todos os formatos de títulos.</div>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">3</div>
+        <div class="step-title">Acompanhe</div>
+        <div class="step-desc">Monitore o status em tempo real pelo painel. Notificações automáticas em cada etapa.</div>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">4</div>
+        <div class="step-title">Receba</div>
+        <div class="step-desc">Quando o devedor pagar, você recebe automaticamente. Simples assim.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="recursos" class="features-section">
+    <div class="section-label">Recursos</div>
+    <h2 class="section-title">Tudo que você precisa</h2>
+    <p class="section-sub">Ferramentas poderosas para empresas de qualquer porte recuperarem crédito com eficiência.</p>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <span class="feature-icon">🔗</span>
+        <div class="feature-title">API completa</div>
+        <div class="feature-desc">Integre o protesto diretamente no seu sistema ERP ou financeiro. Documentação clara e SDKs disponíveis.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">📄</span>
+        <div class="feature-title">Carta de anuência digital</div>
+        <div class="feature-desc">Emissão automática da carta de cancelamento quando o pagamento é confirmado. Sem papel, sem fila.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">🔔</span>
+        <div class="feature-title">Notificações em tempo real</div>
+        <div class="feature-desc">Receba alertas por e-mail, SMS ou webhook a cada movimentação do seu título protestado.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">📊</span>
+        <div class="feature-title">Relatórios avançados</div>
+        <div class="feature-desc">Dashboard com visão completa da sua carteira inadimplente, taxas de recuperação e performance.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">🛡️</span>
+        <div class="feature-title">Segurança total</div>
+        <div class="feature-desc">Dados criptografados, conformidade com LGPD e infraestrutura com uptime de 99,9%.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">🤝</span>
+        <div class="feature-title">Suporte especializado</div>
+        <div class="feature-desc">Time jurídico e financeiro disponível para tirar suas dúvidas sobre o processo de protesto.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="depoimentos">
+    <div class="section-label">Depoimentos</div>
+    <h2 class="section-title">O que nossos clientes dizem</h2>
+    <p class="section-sub">Mais de 50 mil empresas já recuperaram crédito com a Protesto24h.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Reduzimos nossa inadimplência em 60% nos primeiros 3 meses. A integração via API foi simples e o suporte é excelente."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CM</div>
+          <div>
+            <div class="author-name">Carlos Mendes</div>
+            <div class="author-role">CFO, Distribuidora Alpha</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"O processo que levava semanas agora é feito em horas. Impressionante a agilidade e a transparência da plataforma."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">FA</div>
+          <div>
+            <div class="author-name">Fernanda Alves</div>
+            <div class="author-role">Diretora Financeira, TechVar</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Melhor investimento que fizemos este ano. O dashboard em tempo real nos dá controle total sobre a carteira de inadimplentes."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RS</div>
+          <div>
+            <div class="author-name">Ricardo Santos</div>
+            <div class="author-role">Sócio, Escritório RS Advogados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI CALCULATOR -->
+  <section id="calculadora" style="padding: 100px 5%;">
+    <div class="section-label">Calculadora de ROI</div>
+    <h2 class="section-title">Quanto você pode recuperar?</h2>
+    <p class="section-sub">Simule o retorno do protesto com base na sua carteira de inadimplentes.</p>
+
+    <div class="roi-wrapper reveal">
+      <div class="roi-inputs">
+
+        <div class="roi-field">
+          <label>Valor médio de cada dívida</label>
+          <div class="roi-input-wrap">
+            <span class="roi-prefix">R$</span>
+            <input type="number" id="avgDebt" value="5000" min="0">
+          </div>
+          <input type="range" class="roi-range" id="avgDebtRange" min="500" max="100000" step="500" value="5000">
+          <div class="roi-range-labels"><span>R$ 500</span><span>R$ 100k</span></div>
+        </div>
+
+        <div class="roi-field">
+          <label>Número de devedores</label>
+          <div class="roi-input-wrap">
+            <span class="roi-prefix">#</span>
+            <input type="number" id="numDebtors" value="20" min="1">
+          </div>
+          <input type="range" class="roi-range" id="numDebtorsRange" min="1" max="500" step="1" value="20">
+          <div class="roi-range-labels"><span>1</span><span>500</span></div>
+        </div>
+
+        <div class="roi-field">
+          <label>Taxa de recuperação estimada</label>
+          <div class="roi-input-wrap">
+            <span class="roi-prefix">%</span>
+            <input type="number" id="recoveryRate" value="65" min="1" max="100">
+          </div>
+          <input type="range" class="roi-range" id="recoveryRateRange" min="10" max="95" step="1" value="65">
+          <div class="roi-range-labels"><span>10%</span><span>95%</span></div>
+        </div>
+
+      </div>
+
+      <div class="roi-results">
+        <div class="roi-result-title">Sua estimativa de retorno</div>
+
+        <div class="roi-result-main">
+          <div class="roi-big-label">Valor potencial a recuperar</div>
+          <div class="roi-big-value" id="roiTotal">R$ 65.000</div>
+        </div>
+
+        <div class="roi-result-rows">
+          <div class="roi-result-row">
+            <span class="roi-row-label">Carteira total de dívidas</span>
+            <span class="roi-row-value" id="roiPortfolio">R$ 100.000</span>
+          </div>
+          <div class="roi-result-row">
+            <span class="roi-row-label">Devedores recuperados (est.)</span>
+            <span class="roi-row-value" id="roiDebtors">13 de 20</span>
+          </div>
+          <div class="roi-result-row">
+            <span class="roi-row-label">Custo estimado do serviço</span>
+            <span class="roi-row-value negative" id="roiCost">− R$ 1.300</span>
+          </div>
+          <div class="roi-divider"></div>
+          <div class="roi-result-row highlight">
+            <span class="roi-row-label">Retorno líquido estimado</span>
+            <span class="roi-row-value green" id="roiNet">R$ 63.700</span>
+          </div>
+          <div class="roi-result-row">
+            <span class="roi-row-label">ROI</span>
+            <span class="roi-row-value green" id="roiPercent">4.900%</span>
+          </div>
+        </div>
+
+        <button class="btn-primary" style="width:100%; margin-top:24px; font-size:15px;">
+          Quero recuperar esse valor →
+        </button>
+        <p style="font-size:12px; color:var(--muted); text-align:center; margin-top:12px;">
+          *Estimativa baseada na média de recuperação do setor. Resultados podem variar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contato">
+    <div class="cta-box reveal">
+      <h2>Pronto para recuperar<br>seu dinheiro?</h2>
+      <p>Crie sua conta gratuitamente e faça seu primeiro protesto hoje mesmo. Sem contrato, sem mensalidade mínima.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <button class="btn-primary">Criar conta grátis →</button>
+        <button class="btn-ghost">Falar com especialista</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Protesto24h</div>
+        <p>A plataforma mais ágil do Brasil para protesto de títulos. Digital, seguro e transparente.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produto</h4>
+        <ul>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Preços</a></li>
+          <li><a href="#">API</a></li>
+          <li><a href="#">Integrações</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Carreiras</a></li>
+          <li><a href="#">Imprensa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="#">Central de ajuda</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Status</a></li>
+          <li><a href="#">LGPD</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Protesto24h. Todos os direitos reservados.</span>
+      <span>Feito com ♥ no Brasil</span>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <button class="sticky-cta" id="stickyCta">Protestar agora →</button>
+
+  <script>
+    // Scroll animations
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Animated counters
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(eased * target);
+
+        if (target >= 1000000) {
+          el.textContent = prefix + (value / 1000000).toFixed(1) + suffix;
+        } else if (el.dataset.suffix === ' mi') {
+          el.textContent = prefix + 'R$ ' + (value / 1000000).toFixed(1) + ' mi';
+        } else {
+          el.textContent = prefix + value.toLocaleString('pt-BR') + suffix;
+        }
+
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+    // ROI Calculator
+    const fmt = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+
+    function calcROI() {
+      const avg = parseFloat(document.getElementById('avgDebt').value) || 0;
+      const num = parseFloat(document.getElementById('numDebtors').value) || 0;
+      const rate = parseFloat(document.getElementById('recoveryRate').value) || 0;
+
+      const portfolio = avg * num;
+      const recovered = portfolio * (rate / 100);
+      const debtorsRecovered = Math.round(num * (rate / 100));
+      const cost = recovered * 0.02;
+      const net = recovered - cost;
+      const roi = cost > 0 ? ((net / cost) * 100).toFixed(0) : 0;
+
+      document.getElementById('roiTotal').textContent = fmt(recovered);
+      document.getElementById('roiPortfolio').textContent = fmt(portfolio);
+      document.getElementById('roiDebtors').textContent = `${debtorsRecovered} de ${num}`;
+      document.getElementById('roiCost').textContent = `− ${fmt(cost)}`;
+      document.getElementById('roiNet').textContent = fmt(net);
+      document.getElementById('roiPercent').textContent = `${Number(roi).toLocaleString('pt-BR')}%`;
+    }
+
+    function syncRange(inputId, rangeId) {
+      const input = document.getElementById(inputId);
+      const range = document.getElementById(rangeId);
+      input.addEventListener('input', () => { range.value = input.value; calcROI(); });
+      range.addEventListener('input', () => { input.value = range.value; calcROI(); });
+    }
+
+    syncRange('avgDebt', 'avgDebtRange');
+    syncRange('numDebtors', 'numDebtorsRange');
+    syncRange('recoveryRate', 'recoveryRateRange');
+    calcROI();
+
+    // Sticky CTA
+    const stickyCta = document.getElementById('stickyCta');
+    window.addEventListener('scroll', () => {
+      stickyCta.classList.toggle('show', window.scrollY > 400);
+    });
+  </script>
+</body>
+</html>
