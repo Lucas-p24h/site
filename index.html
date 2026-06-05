@@ -156,19 +156,19 @@
 
     <!-- 3 serviços principais -->
     <div class="services-6 reveal">
-      <div class="service-card">
+      <div class="service-card" onclick="window.location.href='servicos/cobranca.html'">
         <div class="svc-icon">📞</div>
         <h3>Somente Cobrança</h3>
         <p>Régua completa: e-mail, SMS, WhatsApp e ligações profissionais. Recupere sem envolver cartório.</p>
         <a href="servicos/cobranca.html" class="link">Saiba mais →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="window.location.href='servicos/protesto-online.html'">
         <div class="svc-icon">📋</div>
         <h3>Protesto Online</h3>
         <p>Envie títulos ao cartório de forma 100% digital. Restrição de crédito imediata ao devedor.</p>
         <a href="servicos/protesto-online.html" class="link">Saiba mais →</a>
       </div>
-      <div class="service-card" style="border-color:rgba(0,156,136,.35);background:rgba(0,156,136,.07);">
+      <div class="service-card" style="border-color:rgba(0,156,136,.35);background:rgba(0,156,136,.07);" onclick="window.location.href='servicos/cobranca-protesto.html'">
         <div style="position:absolute;top:-1px;right:20px;background:var(--gradient);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:0 0 8px 8px;letter-spacing:1px;">MAIS COMPLETO</div>
         <div class="svc-icon">🔗</div>
         <h3>Cobrança + Protesto</h3>
@@ -179,19 +179,20 @@
 
     <!-- 3 serviços complementares (mesmo layout) -->
     <div class="services-6-secondary reveal">
-      <div class="service-card">
+      <div class="service-card" style="position:relative;" onclick="window.location.href='servicos/consulta-protesto.html'">
+        <div style="position:absolute;top:-1px;right:20px;background:var(--gradient);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:0 0 8px 8px;letter-spacing:1px;">NOVO</div>
         <div class="svc-icon">🔍</div>
         <h3>Consulta Protesto</h3>
         <p>Verifique se um CPF ou CNPJ tem protestos em todo o Brasil. Resultado imediato com comprovante.</p>
         <a href="servicos/consulta-protesto.html" class="link">Saiba mais →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="window.location.href='servicos/api-integracoes.html'">
         <div class="svc-icon">⚡</div>
         <h3>API e Integrações</h3>
         <p>Integre cobrança e protesto diretamente no seu ERP ou sistema financeiro via API RESTful.</p>
         <a href="servicos/api-integracoes.html" class="link">Saiba mais →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="window.location.href='servicos/carta-anuencia.html'">
         <div class="svc-icon">📄</div>
         <h3>Carta de Anuência</h3>
         <p>Emissão automática após o pagamento para cancelamento do protesto em cartório. Sem papel.</p>
@@ -246,6 +247,54 @@
   </div>
 </section>
 
+<!-- BLOG -->
+<section style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="label">Mantenha-se atualizado</div>
+      <h2>Acesse materiais gratuitos sobre<br>recuperação de crédito</h2>
+    </div>
+    <div class="grid-4 reveal">
+
+      <a href="blog/post.html" class="post-card" style="text-decoration:none;">
+        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(99,102,241,.55),rgba(139,92,246,.45));">🔍</div>
+        <div class="post-body">
+          <div class="post-meta" style="margin-bottom:10px;"><span style="font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">26 de Maio de 2026</span></div>
+          <h3 style="font-size:15px;font-weight:700;line-height:1.4;color:var(--text);margin-bottom:auto;flex:1;">Como consultar um protesto?</h3>
+          <span style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--brand-dk);border-bottom:2px solid var(--brand-dk);padding-bottom:2px;">Ler Artigo</span>
+        </div>
+      </a>
+
+      <a href="blog/post.html" class="post-card" style="text-decoration:none;">
+        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(67,56,202,.55),rgba(99,102,241,.45));">📋</div>
+        <div class="post-body">
+          <div class="post-meta" style="margin-bottom:10px;"><span style="font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">22 de Abril de 2026</span></div>
+          <h3 style="font-size:15px;font-weight:700;line-height:1.4;color:var(--text);margin-bottom:auto;flex:1;">Como fazer protesto em cartório online?</h3>
+          <span style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--brand-dk);border-bottom:2px solid var(--brand-dk);padding-bottom:2px;">Ler Artigo</span>
+        </div>
+      </a>
+
+      <a href="blog/post.html" class="post-card" style="text-decoration:none;">
+        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(109,40,217,.55),rgba(139,92,246,.45));">📊</div>
+        <div class="post-body">
+          <div class="post-meta" style="margin-bottom:10px;"><span style="font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">14 de Abril de 2026</span></div>
+          <h3 style="font-size:15px;font-weight:700;line-height:1.4;color:var(--text);margin-bottom:auto;flex:1;">Gestão de processos para quem empreende: Guia prático</h3>
+          <span style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--brand-dk);border-bottom:2px solid var(--brand-dk);padding-bottom:2px;">Ler Artigo</span>
+        </div>
+      </a>
+
+      <a href="blog/post.html" class="post-card" style="text-decoration:none;">
+        <div class="post-thumb" style="background:linear-gradient(135deg,rgba(91,33,182,.55),rgba(124,58,237,.45));">💳</div>
+        <div class="post-body">
+          <div class="post-meta" style="margin-bottom:10px;"><span style="font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">7 de Abril de 2026</span></div>
+          <h3 style="font-size:15px;font-weight:700;line-height:1.4;color:var(--text);margin-bottom:auto;flex:1;">Dívidas no cartão de crédito: Tudo o que você precisa saber</h3>
+          <span style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--brand-dk);border-bottom:2px solid var(--brand-dk);padding-bottom:2px;">Ler Artigo</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 <div id="footer-placeholder"></div>
 <script src="assets/js/app.js"></script>

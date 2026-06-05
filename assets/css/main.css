@@ -145,6 +145,7 @@ section{padding:96px 0}
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--radius-lg);padding:32px;
   transition:all .3s;display:flex;flex-direction:column;
+  cursor:pointer;
 }
 .service-card:hover{border-color:rgba(0,156,136,.4);transform:translateY(-4px);background:var(--surface2)}
 .service-card .svc-icon{
