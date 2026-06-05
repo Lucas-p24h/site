@@ -293,19 +293,40 @@ section{padding:96px 0}
 /* ══════════════════════════════════════════════
    LOGOS CAROUSEL
    ══════════════════════════════════════════════ */
-.logos-section{padding:52px 0;border-bottom:1px solid var(--border);background:var(--bg2)}
-.logos-label{text-align:center;font-size:12px;color:var(--faint);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px;padding:0 5%}
-.logos-grid{
-  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
-  gap:36px 56px;padding:0 5%;
+.logos-section{padding:56px 0;border-bottom:1px solid var(--border);background:transparent;}
+.logos-label{text-align:center;font-size:12px;color:var(--faint);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;padding:0 5%}
+
+/* ── LOGOS MARQUEE ── */
+.logos-marquee-wrap{
+  overflow:hidden;position:relative;padding:8px 0;cursor:grab;
+  -webkit-overflow-scrolling:touch;
 }
-.logos-grid img{
-  height:32px;width:auto;max-width:120px;
-  filter:grayscale(1) brightness(0.5);
-  opacity:.5;transition:opacity .3s,filter .3s;
-  object-fit:contain;
+.logos-marquee-wrap::before,.logos-marquee-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;
 }
-.logos-grid img:hover{opacity:.85;filter:grayscale(0) brightness(1)}
+.logos-marquee-wrap::before{left:0;background:linear-gradient(to right,var(--bg),transparent);}
+.logos-marquee-wrap::after{right:0;background:linear-gradient(to left,var(--bg),transparent);}
+.logos-marquee{
+  display:flex;align-items:center;gap:72px;
+  width:max-content;padding:0 36px;
+  animation:logos-scroll 40s linear infinite;
+  touch-action:pan-x;
+}
+.logos-marquee-wrap:hover .logos-marquee{animation-play-state:paused;}
+.logos-marquee img{
+  height:56px;width:auto;
+  object-fit:contain;flex-shrink:0;
+  transition:transform .3s,opacity .3s;
+  user-select:none;-webkit-user-drag:none;pointer-events:none;
+}
+.logos-marquee-wrap:hover .logos-marquee img{opacity:.85;}
+.logos-marquee-wrap:hover .logos-marquee img:hover{opacity:1;transform:scale(1.06);pointer-events:auto;}
+@keyframes logos-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media(max-width:768px){
+  .logos-marquee img{height:36px;}
+  .logos-marquee{gap:48px;}
+  .logos-marquee-wrap::before,.logos-marquee-wrap::after{width:48px;}
+}
 
 /* ══════════════════════════════════════════════
    STEPS / PROCESS
