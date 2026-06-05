@@ -322,6 +322,9 @@ section{padding:96px 0}
 .logos-marquee-wrap:hover .logos-marquee img{opacity:.85;}
 .logos-marquee-wrap:hover .logos-marquee img:hover{opacity:1;transform:scale(1.06);pointer-events:auto;}
 @keyframes logos-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.logo-tmb{mix-blend-mode:screen;}
+.logo-novo-mundo{height:36px !important;}
+.logo-unitintas{height:78px !important;}
 @media(max-width:768px){
   .logos-marquee img{height:36px;}
   .logos-marquee{gap:48px;}
