@@ -97,9 +97,9 @@ const FOOTER_HTML = `
     <div class="footer-col">
       <h5>Legal</h5>
       <ul>
-        <li><a href="#">Termos de uso</a></li>
-        <li><a href="#">Privacidade</a></li>
-        <li><a href="#">LGPD</a></li>
+        <li><a href="{R}termos.html">Termos de uso</a></li>
+        <li><a href="{R}termos.html">Privacidade</a></li>
+        <li><a href="{R}termos.html">LGPD</a></li>
       </ul>
     </div>
   </div>
