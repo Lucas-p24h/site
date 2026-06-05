@@ -9,12 +9,12 @@ const WPP_LINK = 'https://wa.me/5500000000000?text=Olá! Gostaria de saber mais 
 const NAV_HTML = `
 <nav id="main-nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="{R}index.html">Protesto24h</a>
+    <a class="nav-logo" href="{R}index.html"><img src="{R}imagens/logo-p24h/logo-horizontal.png" alt="Protesto24h" height="38" style="width:auto;display:block;"></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="{R}index.html">Home</a></li>
       <li class="has-submenu">
-        <a href="{R}servicos/index.html">Serviços <span class="nav-arrow">▾</span></a>
+        <a href="#" role="button" aria-haspopup="true">Serviços <span class="nav-arrow">▾</span></a>
         <ul class="submenu">
           <li><a href="{R}servicos/cobranca.html">📞 Cobrança</a></li>
           <li><a href="{R}servicos/protesto-online.html">📋 Protesto Online</a></li>
@@ -36,7 +36,7 @@ const NAV_HTML = `
     </ul>
     <div class="nav-actions">
       <a href="https://app.protesto24h.com.br/login" class="nav-login">Entrar</a>
-      <a href="{R}contato.html" class="nav-cta">Falar com especialista</a>
+      <a href="https://app.protesto24h.com.br/cadastro" class="nav-cta">Cadastre-se</a>
     </div>
   </div>
 </nav>`;
@@ -140,8 +140,8 @@ function initNav() {
 
   document.querySelectorAll('.has-submenu > a').forEach(a => {
     a.addEventListener('click', e => {
+      e.preventDefault();
       if (window.innerWidth <= 768) {
-        e.preventDefault();
         const sub = a.parentElement.querySelector('.submenu');
         if (sub) {
           const isOpen = sub.style.display === 'flex';
@@ -251,6 +251,8 @@ function initROI() {
     set('roiNumRec',    `${numRec} de ${num}`);
     set('roiPlanName',  plan.name);
     set('roiFixedCost', `− ${fmt(fixedCost)}`);
+    const fmtPrice = p => 'R$ ' + p.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+    set('roiFixedFormula', `${fmtPrice(plan.price)}/título × ${Math.floor(num)} título${Math.floor(num) !== 1 ? 's' : ''}`);
     set('roiCommission',plan.commission > 0 ? `− ${plan.commission * 100}% de ${fmt(recovered)}` : `Incluso no plano`);
     set('roiTotalFee',  `− ${fmt(totalFee)}`);
     set('roiNet',       fmt(net));

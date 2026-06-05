@@ -3,32 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Protesto24h — Cobrança e Protesto Online | Recupere seu Crédito</title>
+  <title>Protesto24h | Cobrança e Protesto Online | Recupere seu Crédito</title>
+  <link rel="icon" type="image/png" href="imagens/favicon.png">
   <meta name="description" content="Plataforma líder em cobrança extrajudicial e protesto de títulos online. +10 mil clientes, R$300 mi recuperados. 100% digital, sem mensalidade.">
   <meta name="keywords" content="protesto de títulos, cobrança extrajudicial, recuperação de crédito, protesto online, cobrança online">
   <link rel="canonical" href="https://www.protesto24h.com.br/">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
-    /* Hero Visual Panel */
-    .hero-visual{background:var(--surface);border:1px solid rgba(0,153,181,.2);border-radius:var(--radius-lg);padding:28px;backdrop-filter:blur(20px)}
-    .hv-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:20px;font-weight:600}
-    .hv-stat{display:flex;align-items:center;gap:14px;padding:14px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;margin-bottom:12px}
-    .hv-stat:last-child{margin-bottom:0}
-    .hv-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-    .hv-icon.teal{background:rgba(0,153,181,.2)}
-    .hv-icon.green{background:rgba(34,197,94,.2)}
-    .hv-icon.amber{background:rgba(245,158,11,.2)}
-    .hv-label{font-size:11px;color:var(--muted);margin-bottom:3px}
-    .hv-val{font-size:20px;font-weight:800}
-    .hv-val.teal{color:#00c8dc}
-    .hv-val.green{color:#4ade80}
-    .hv-val.amber{color:#fbbf24}
+    /* Hero Visual */
+    .hero-visual{overflow:visible;display:flex;align-items:center;}
 
     /* Proof bar */
     .proof-bar{display:flex;gap:24px;margin-top:32px;flex-wrap:wrap}
     .proof-item{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
-    .proof-item .check{color:var(--brand-lt);font-weight:700}
+    .proof-item .check{color:var(--brand-dk);font-weight:700}
 
     /* 6-col service grid */
     .services-6{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -37,6 +26,7 @@
   </style>
 </head>
 <body>
+<script>if(history.scrollRestoration){history.scrollRestoration="manual";}window.scrollTo(0,0);</script>
 
 <div id="nav-placeholder"></div>
 
@@ -48,10 +38,10 @@
       <div class="badge"><span class="badge-dot"></span>+10.000 empresas confiam na Protesto24h</div>
       <h1>Recupere seu crédito.<br><span class="grad">Rápido, digital</span><br>e sem burocracia.</h1>
       <p style="font-size:18px;margin:18px 0 32px;max-width:480px;color:var(--muted);">
-        Cobrança extrajudicial e protesto de títulos em cartório, 100% online. Sem mensalidade, sem fidelidade — pague só pelo que usar.
+        Cobrança extrajudicial e protesto de títulos em cartório, 100% online. Sem mensalidade, sem fidelidade. Pague só pelo que usar.
       </p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="contato.html" class="btn btn-primary btn-lg">Falar com especialista →</a>
+        <a href="https://app.protesto24h.com.br/cadastro" class="btn btn-primary btn-lg">Começar agora →</a>
         <a href="servicos/index.html" class="btn btn-ghost btn-lg">Conhecer serviços</a>
       </div>
       <div class="proof-bar">
@@ -62,35 +52,12 @@
       </div>
     </div>
     <div class="hero-visual reveal">
-      <p class="hv-title">Painel em tempo real</p>
-      <div class="hv-stat">
-        <div class="hv-icon teal">📋</div>
-        <div>
-          <div class="hv-label">Títulos recuperados no mês</div>
-          <div class="hv-val teal" data-count="200000">0</div>
-        </div>
-      </div>
-      <div class="hv-stat">
-        <div class="hv-icon green">💰</div>
-        <div>
-          <div class="hv-label">Recuperado no mês</div>
-          <div class="hv-val green">R$ 10 milhões</div>
-        </div>
-      </div>
-      <div class="hv-stat">
-        <div class="hv-icon teal">🏢</div>
-        <div>
-          <div class="hv-label">Clientes ativos</div>
-          <div class="hv-val teal" data-count="10000" data-suffix="+">0</div>
-        </div>
-      </div>
-      <div class="hv-stat">
-        <div class="hv-icon amber">🏆</div>
-        <div>
-          <div class="hv-label">Total recuperado (acumulado)</div>
-          <div class="hv-val amber">R$ 300 milhões</div>
-        </div>
-      </div>
+      <img
+        src="imagens/home/protesto-online-estatisticas.webp"
+        alt="Estatísticas de protesto online e recuperação de crédito"
+        style="display:block;width:115%;max-width:none;height:auto;transform-origin:left center;"
+        loading="eager"
+      >
     </div>
   </div>
 </section>
@@ -108,18 +75,16 @@
 <!-- LOGOS CLIENTES -->
 <div class="logos-section">
   <p class="logos-label">Empresas que confiam na Protesto24h</p>
-  <div class="logos-track-wrap">
-    <div class="logos-track">
-      <img src="imagens/logos-clientes/tmb.png" alt="TMB" width="120" height="40">
-      <img src="imagens/logos-clientes/novo-mundo.png" alt="Novo Mundo" width="120" height="40">
-      <img src="imagens/logos-clientes/edenred.png" alt="Edenred" width="120" height="40">
-      <img src="imagens/logos-clientes/unitintas.png" alt="Unitintas" width="120" height="40">
-      <img src="imagens/logos-clientes/ciee.png" alt="CIEE" width="120" height="40">
-      <img src="imagens/logos-clientes/mecanizou.png" alt="Mecanizou" width="120" height="40">
-      <img src="imagens/logos-clientes/faturar.png" alt="Faturar" width="120" height="40">
-      <img src="imagens/logos-clientes/pifpaf.jfif" alt="Pif Paf" width="120" height="40">
-      <img src="imagens/logos-clientes/cayena.png" alt="Cayena" width="120" height="40">
-    </div>
+  <div class="logos-grid">
+    <img src="imagens/logos-clientes/tmb.png" alt="TMB">
+    <img src="imagens/logos-clientes/novo-mundo.png" alt="Novo Mundo">
+    <img src="imagens/logos-clientes/edenred.png" alt="Edenred">
+    <img src="imagens/logos-clientes/unitintas.png" alt="Unitintas">
+    <img src="imagens/logos-clientes/ciee.png" alt="CIEE">
+    <img src="imagens/logos-clientes/mecanizou.png" alt="Mecanizou">
+    <img src="imagens/logos-clientes/faturar.png" alt="Faturar">
+    <img src="imagens/logos-clientes/pifpaf.jfif" alt="Pif Paf">
+    <img src="imagens/logos-clientes/cayena.png" alt="Cayena">
   </div>
 </div>
 
@@ -151,12 +116,12 @@
           <input type="range" class="roi-range" id="roiRateR" min="10" max="95" step="1" value="65">
           <div class="roi-range-labels"><span>10%</span><span>95%</span></div>
         </div>
-        <div style="background:rgba(0,153,181,.06);border:1px solid rgba(0,153,181,.2);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--muted);">
-          💡 Quanto maior seu volume, menor o custo por título. <a href="preco.html" style="color:var(--brand-lt);">Ver tabela de preços →</a>
+        <div style="background:rgba(0,156,136,.06);border:1px solid rgba(0,156,136,.2);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--muted);">
+          💡 Quanto maior seu volume, menor o custo por título. <a href="preco.html" style="color:var(--brand-dk);">Ver tabela de preços →</a>
         </div>
       </div>
       <div class="roi-panel">
-        <div class="roi-plan-badge">📊 Plano calculado: <strong id="roiPlanName" style="color:var(--brand-lt);">Basic</strong></div>
+        <div class="roi-plan-badge">📊 Plano calculado: <strong id="roiPlanName" style="color:var(--brand-dk);">Basic</strong></div>
         <div class="roi-result">
           <div class="roi-result-label">Valor potencial a recuperar</div>
           <div class="roi-result-val" id="roiTotal">R$ 0</div>
@@ -164,7 +129,10 @@
         <div class="roi-rows">
           <div class="roi-row"><span>Carteira total</span><span id="roiPortfolio">R$ 0</span></div>
           <div class="roi-row"><span>Títulos recuperados (est.)</span><span id="roiNumRec">0</span></div>
-          <div class="roi-row"><span>Custo fixo por título</span><span class="neg" id="roiFixedCost">R$ 0</span></div>
+          <div class="roi-row">
+            <span>Custo fixo por título<span id="roiFixedFormula" style="display:block;font-size:11px;color:var(--faint);font-weight:400;margin-top:2px;"></span></span>
+            <span class="neg" id="roiFixedCost">R$ 0</span>
+          </div>
           <div class="roi-row"><span>Comissão de sucesso</span><span class="neg" id="roiCommission">—</span></div>
           <div class="roi-row"><span>Custo total do serviço</span><span class="neg" id="roiTotalFee">R$ 0</span></div>
           <div class="roi-row"><span>Retorno líquido</span><span class="pos" id="roiNet">R$ 0</span></div>
@@ -200,7 +168,7 @@
         <p>Envie títulos ao cartório de forma 100% digital. Restrição de crédito imediata ao devedor.</p>
         <a href="servicos/protesto-online.html" class="link">Saiba mais →</a>
       </div>
-      <div class="service-card" style="border-color:rgba(0,153,181,.35);background:rgba(0,153,181,.07);">
+      <div class="service-card" style="border-color:rgba(0,156,136,.35);background:rgba(0,156,136,.07);">
         <div style="position:absolute;top:-1px;right:20px;background:var(--gradient);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:0 0 8px 8px;letter-spacing:1px;">MAIS COMPLETO</div>
         <div class="svc-icon">🔗</div>
         <h3>Cobrança + Protesto</h3>
@@ -278,19 +246,9 @@
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta-banner">
-  <div class="cta-box reveal">
-    <h2>Pronto para recuperar<br>seu dinheiro?</h2>
-    <p>Fale com um especialista e veja como a Protesto24h pode ajudar sua empresa hoje mesmo.</p>
-    <div class="cta-actions">
-      <a href="contato.html" class="btn btn-primary btn-lg">Falar com especialista →</a>
-      <a href="preco.html" class="btn btn-ghost btn-lg">Consultar preços</a>
-    </div>
-  </div>
-</section>
 
 <div id="footer-placeholder"></div>
 <script src="assets/js/app.js"></script>
+
 </body>
 </html>
